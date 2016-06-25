@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <!-- Menus moved under Tools\Parameters -->
+        <!-- Hide Apps menu under Setting -->
+        <record model="ir.ui.menu" id="base.module_mi">
+            <field name="parent_id" ref="base.menu_ir_property"/>
+        </record>
+
+        <!-- Hide Update menu under Setting -->
+        <record model="ir.ui.menu" id="base.menu_module_updates">
+            <field name="parent_id" ref="base.menu_ir_property"/>
+        </record>
+
+    </data>
+</openerp>

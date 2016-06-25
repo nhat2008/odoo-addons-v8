@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+auditlog.access_auditlog_rule_manager,auditlog_rule_manager_local_admin,auditlog.model_auditlog_rule,base.group_erp_manager,1,0,0,0
+auditlog.access_auditlog_log_manager,auditlog_log_manager_local_admin,auditlog.model_auditlog_log,base.group_erp_manager,1,0,0,0
+auditlog.access_auditlog_log_line_manager,auditlog_log_line_manager_local_admin,auditlog.model_auditlog_log_line,base.group_erp_manager,1,0,0,0
+point_of_sale.access_pos_order_manager,pos.order manager,point_of_sale.model_pos_order,res_group_local_admin,1,1,1,1
+base.access_res_users_group_erp_manager,res.users.group.erp.manager,base.model_res_users,res_group_local_admin,1,1,0,0
+base.access_ir_model_group_erp_manager,ir_model group_erp_manager,base.model_ir_model,base.group_erp_manager,1,0,0,0

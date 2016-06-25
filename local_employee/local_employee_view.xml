@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Hidden Menu: Point of Sale > Products-->
+        <!-- Groups can see this module :  point_of_sale.group_pos_manager-->
+        <menuitem name="Products" id="point_of_sale.menu_point_of_sale_product" parent="point_of_sale.menu_point_root" sequence="15" groups="point_of_sale.group_pos_manager"/>
+
+        <!-- Hidden Menu: Sales-->
+        <!-- Groups can see this module :  point_of_sale.group_pos_manager-->
+        <record model="ir.ui.menu" id="base.menu_base_partner">
+            <field name="groups_id" eval="[(6,0,[ref('point_of_sale.group_pos_manager')])]"/>
+        </record>
+
+        <!-- Hidden Menu: Warehouse -->
+        <!-- Groups can see this module :  stock.group_stock_manager-->
+        <record model="ir.ui.menu" id="stock.menu_stock_root">
+            <field name="groups_id" eval="[(6,0,[ref('stock.group_stock_manager')])]"/>
+        </record>
+
+        <!--Create access to field : price_unit and discount fields in pos.order FORM  -->
+        <!--Groups are affected:  res_group_local_employee-->
+        <!--The groups can not edit fields: price_unit and discount  -->
+        <record id="inherit_view_pos_pos_form" model="ir.ui.view">
+            <field name="name">inherit.pos.order</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="groups_id" eval="[(6, 0, [ref('res_group_local_employee') ])]"/>
+            <field name="arch" type="xml">
+                <field name='price_unit' position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+                 <field name='discount' position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+            </field>
+        </record>
+
+
+        <!-- Hide Buttons : Create and Import  -->
+        <!-- Tree : POS.Order Tree -->
+        <!-- Groups : res_group_local_employee -->
+        <record model="ir.ui.view" id="inherit_view_pos_order_tree">
+            <field name="name">Orders</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="groups_id" eval="[(6, 0, [ref('res_group_local_employee') ])]"/>
+            <field name="arch" type="xml">
+                <tree string="POS Orders" position="attributes">
+                    <attribute name="create">false</attribute>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

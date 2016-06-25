@@ -1,0 +1,7 @@
+<templates>
+        <t t-extend="ViewManagerAction">
+            <t t-jquery="select.oe_debug_view" t-operation="replace">
+                <select t-if="widget.session.uid === 1 and widget.session.debug" class="oe_debug_view"/>
+            </t>
+        </t>
+</templates>

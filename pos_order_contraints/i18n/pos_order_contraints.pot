@@ -1,0 +1,17 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_order_contraints
+#
+#. module: pos_order_contraints
+#. openerp-web
+#: code:extra-addons/pos_order_contraints/static/src/js/screens.js:175
+#, python-format
+msgid "List of products are not enough quantity to sale"
+msgstr ""
+
+#. module: pos_order_contraints
+#. openerp-web
+#: code:extra-addons/pos_order_contraints/static/src/js/screens.js:153
+#, python-format
+msgid "Can not add products with quantity <= 0"
+msgstr ""

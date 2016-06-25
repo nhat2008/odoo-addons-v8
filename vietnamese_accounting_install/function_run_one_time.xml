@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <function model="wizard.multi.charts.accounts" name="execute_automatically">
+            <!-- ids = -->                  <value eval="[]"/>
+            <!-- context = -->              <value eval="{}"/>
+        </function>
+
+		<!-- <function model="account.fiscalyear" name="create_period_automatically">
+                             <value eval="[]"/>
+                <value eval="{}"/>
+        </function> -->
+        
+
+    </data>
+</openerp>

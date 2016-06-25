@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Create new group: Local Employee -->
+        <record id="res_group_local_employee" model="res.groups">
+            <field name="name">Local Employee</field>
+            <field name="implied_ids" eval="[(6,0,[ref('point_of_sale.group_pos_user'),ref('base.group_user'),ref('stock.group_stock_user'),ref('base.group_sale_manager')])]"/>
+        </record>
+
+        <!--Modify Access rights to Model : product.template  -->
+        <!--Groups are affected:  res_group_local_employee, only READ-->
+        <!-- <record id="access_product_template_local_employee" model="ir.model.access">
+            <field name="name">product.template.local.employee</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="groups" eval="[(4, ref('res_group_local_employee'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record> -->
+
+        <!--Modify Access rights to Model : pos.order  -->
+        <!--Groups are affected:  res_group_local_employee, only READ,CREATE,WRITE-->
+        <!-- <record id="access_pos_order_local_employee" model="ir.model.access">
+            <field name="name">pos.order.local.employee</field>
+            <field name="model_id" ref="point_of_sale.model_pos_order"/>
+            <field name="groups" eval="[(4, ref('res_group_local_employee'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+        </record> -->
+
+
+        <!--Create Record Rule to Model: pos.order  -->
+        <!--Groups are affected:  res_group_local_employee-->
+        <!--The groups can not see the pos.order of the others  -->
+        <record model="ir.rule" id="local_employee_settings">
+            <field name="name">For Local Employee: should not see the Other</field>
+            <field name="model_id" ref="point_of_sale.model_pos_order"/>
+            <field name="groups" eval="[(4, ref('res_group_local_employee'))]"/>
+            <field name="domain_force">[('user_id','=',user.id)]</field>
+        </record>
+
+    </data>
+</openerp>

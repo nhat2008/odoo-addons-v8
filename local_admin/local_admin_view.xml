@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Hidden Menu: Install Modules-->
+        <!-- Groups can see this module :  base.group_system-->
+        <!-- Top menu item -->
+        <menuitem id="base.menu_management" name="Modules" parent="base.menu_administration" sequence="0"  groups="base.group_system" />
+
+        <!-- Hidden Menu: Sales -> Products-->
+        <!-- Groups can see this module :  base.group_system-->
+        <menuitem id="base.menu_product" name="Products" parent="base.menu_base_partner" sequence="9"  groups="base.group_system" />
+
+
+        <!-- Hidden Menu: Point Of Sale -> Products-->
+        <!-- Groups can see this module :  base.group_system-->
+        <menuitem id="point_of_sale.menu_point_of_sale_product" name="Products" parent="point_of_sale.menu_point_root" sequence="9"  groups="base.group_system" />
+
+        <!-- Hidden Menu: Purchases -> Products-->
+        <!-- Groups can see this module :  base.group_system-->
+        <menuitem
+            id="purchase.menu_procurement_management_product" name="Products"
+            parent="base.menu_purchase_root" sequence="8" groups="base.group_system"/>
+
+        <!-- Hidden Menu: Purchases -> Incoming Products-->
+        <!-- Groups can see this module :  base.group_system-->
+        <menuitem id="purchase.menu_procurement_management_inventory" name="Incoming Products"
+            parent="base.menu_purchase_root" sequence="4" groups="base.group_system"/>
+
+        <!-- Show Menu: Auditlog Modules-->
+        <!-- Groups can see this module :  base.group_system,res_group_local_admin -->
+        <!-- Top menu item -->        
+        <menuitem id="auditlog.menu_audit" name="Audit"
+            parent="base.menu_reporting" sequence="50"
+            groups="base.group_system,res_group_local_admin"/>
+
+        <!-- Set Read-only to Field : name in res.user  -->
+        <!-- Affected groups : res_group_local_admin -->
+        <record id="inherit_view_users_form" model="ir.ui.view">
+            <field name="name">inherit.res.users.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="groups_id" eval="[(6, 0, [ref('res_group_local_admin') ])]"/>
+            <field name="arch" type="xml">
+                 <field name='name' position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+            </field>
+        </record>
+
+
+        
+
+        <!-- Hidden Menu: Messaging and Settings -> Configuration -> Translation -> Payments-->
+        <!-- Groups can see this module :  base.group_system-->
+
+        <!-- Top menu item -->
+        <record model='ir.ui.menu' id='mail.mail_feeds_main'>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+        </record>
+
+        <menuitem id="base.menu_config" name="Configuration" 
+            parent="base.menu_administration" sequence="1" groups="base.group_system"/>
+
+        <menuitem id="base.menu_translation" name="Translations" parent="base.menu_administration"      sequence="7" groups="base.group_system"/>
+
+        <menuitem name='Payments' id='payment.root_payment_menu'
+            parent='base.menu_administration' groups="base.group_system"/>
+        <!-- Hidden Menu: Messaging and Settings -> Configuration -> Translation -> Payments-->
+        <!-- Groups can see this module :  base.group_system-->
+
+
+
+        <!-- Hidden Menu: Inventory -> Operations -> Current Inv. Valuation -> Configuration -> type of operation -> Configuration -> routes -> Configuration -> Incoterm-->
+        <!-- Groups can see this module :  base.group_system-->
+        <menuitem id="stock.menu_stock_warehouse_mgmt" name="Operations" parent="stock.menu_stock_root" sequence="1" groups="base.group_system"/>
+
+        <record model='ir.ui.menu' id='stock_account.menu_action_history_tree'>
+            <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
+        </record>
+
+        <menuitem 
+            id="stock.menu_pickingtype" 
+            name="Types of Operation" 
+            parent="stock.menu_stock_configuration" 
+            action="stock.action_picking_type_list" 
+            groups="base.group_system"/>
+
+        <menuitem action="stock.action_routes_form" id="stock.menu_stock_routes"
+            parent="stock.menu_stock_configuration" sequence="11" groups="base.group_system"/>
+
+        <menuitem action="stock.action_incoterms_tree" id="stock.menu_action_incoterm_open" parent="stock.menu_stock_configuration" sequence="40" groups="base.group_system"/>
+
+        <!-- Hidden Menu: Inventory -> Operations -> Current Inv. Valuation -> Configuration -> type of operation -> Configuration -> routes -> Configuration -> Incoterm-->
+        <!-- Groups can see this module :  base.group_system-->
+
+    </data>
+</openerp>

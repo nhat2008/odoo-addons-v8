@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Create new group: Local Admin -->
+        <record id="res_group_local_admin" model="res.groups">
+            <field name="name">Local Admin</field>
+            <field name="implied_ids" eval="[(6,0,[ref('base.group_erp_manager'),ref('base.group_user'),
+                                                    ref('point_of_sale.group_pos_user'),ref('point_of_sale.group_pos_manager'),
+                                                    ref('purchase.group_purchase_user'),ref('purchase.group_purchase_manager'),
+                                                    ref('stock.group_stock_user'),ref('stock.group_stock_manager'),
+                                                    ref('base.group_sale_manager')])]"/>
+        </record>
+        
+        <!--Modify Access rights to Model : pos.order  -->
+        <!--Groups are affected:  res_group_local_admin , READ,WRITE,DELETE,CREATE-->
+        <!-- <record id="point_of_sale.access_pos_order_manager" model="ir.model.access">
+            <field name="name">pos.order manager</field>
+            <field name="model_id" ref="point_of_sale.model_pos_order"/>
+            <field name="groups" eval="[(4, ref('res_group_local_admin'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record> -->
+        
+        
+        <!--Modify Access rights to Model: res.users , only read-->
+        <!--Groups are affected:  res_group_local_admin , this group can only READ the res.users-->
+        <!-- <record id="base.access_res_users_group_erp_manager" model="ir.model.access">
+            <field name="name">res.users.group.erp.manager</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="groups" eval="[(4, ref('res_group_local_admin'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record> -->
+        
+        <!--Create Record Rule to Model: pos.order  -->
+        <!--Groups are affected:  res_group_local_admin-->
+        <!--The groups can not see the pos.order of the Administrator  -->
+         <record model="ir.rule" id="local_admin_settings_pos_order">
+            <field name="name">For Local Admin: should not see the Admin</field>
+            <field name="model_id" ref="point_of_sale.model_pos_order"/>
+            <field name="groups" eval="[(4, ref('res_group_local_admin'))]"/>
+            <field name="domain_force">[('user_id.name','!=','Administrator')]</field>
+        </record>
+        
+        
+        
+        
+        <!-- Security Record Rule : Local Admin can not edit information of Local Admin and Administrators  -->
+	    <!-- New record rule for model res.users -->
+	    <record model="ir.rule" id="local_admin_settings">
+	        <field name="name">For Local Admin: should not see the Super admin</field>
+	        <field name="model_id" ref="base.model_res_users"/>
+	        <field name="groups" eval="[(4, ref('res_group_local_admin'))]"/>
+	        <field name="domain_force">[('name','!=','Administrator'),('name','!=','Local Admin')]</field>
+	        <field name="perm_read" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_unlink" eval="0"/>
+	    </record>
+	    
+        
+    </data>
+</openerp>

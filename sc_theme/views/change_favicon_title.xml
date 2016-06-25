@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Favicon -->
+        <template id="scfavicon1" inherit_id="web.layout" name="my favicon1" priority="20">
+            <xpath expr="//link[@href='/web/static/src/img/favicon.ico']" position="replace">
+                <link rel="shortcut icon" href="/sc_theme/static/src/img/favicon.ico" type="image/x-icon" />
+            </xpath>
+        </template>
+        
+        <template id="scfavicon2" inherit_id="web.qunit_suite" name="my favicon2" priority="20">
+            <xpath expr="//link[@href='/web/static/src/img/favicon.ico']" position="replace">
+                <link rel="shortcut icon" href="/sc_theme/static/src/img/favicon.ico" type="image/x-icon" />
+            </xpath>
+        </template>
+        
+        <template id="scfavicon_session" inherit_id="point_of_sale.index" name="my favicon" priority="20">
+            <xpath expr="//link[@href='/web/static/src/img/favicon.ico']" position="replace">
+                <link rel="shortcut icon" href="/sc_theme/static/src/img/favicon.ico" type="image/x-icon" />
+            </xpath>
+        </template>
+
+        <template id="scfavicon_barcode_scanner" inherit_id="stock.barcode_index" name="Barcode Scanner">
+            <xpath expr="//link[@href='/web/static/src/img/favicon.ico']" position="replace">
+                <link rel="shortcut icon" href="/sc_theme/static/src/img/favicon.ico" type="image/x-icon" />
+            </xpath>
+        </template>
+        
+        <!-- Title -->
+        <template id="scmetatitle" inherit_id="web.layout" name="my title" priority="20">
+            <xpath expr="//head//title" position="replace">
+                <title>SONG CAU</title>
+                <script type="text/javascript" src="/sc_theme/static/src/js/set_title_sc.js"></script>
+            </xpath>
+        </template>
+        <template id="scmetatitle_" inherit_id="web.qunit_suite" name="my title" priority="20">
+            <xpath expr="//head//title" position="replace">
+                <title>SONG CAU</title>
+                <script type="text/javascript" src="/sc_theme/static/src/js/set_title_sc.js"></script>
+            </xpath>
+        </template>
+        <template id="scmetatitle_session" inherit_id="point_of_sale.index" name="my title" priority="20">
+            <xpath expr="//head//title" position="replace">
+                <title>SONG CAU</title>
+                <script type="text/javascript" src="/sc_theme/static/src/js/set_title_sc.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>

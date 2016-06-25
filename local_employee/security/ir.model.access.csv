@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_template_local_employee,product.template.local.employee,product.model_product_template,res_group_local_employee,1,0,0,0
+access_pos_order_local_employee,pos.order.local.employee,point_of_sale.model_pos_order,res_group_local_employee,1,1,1,0

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="template_account_fiscalyear" model="account.fiscalyear">
+            <field name="name">2015-2016</field>
+            <field name="code">15-16</field>
+            <field name="company_id" eval="1"/>
+            <field name="date_start">01/01/2015</field>
+            <field name="date_stop">01/01/2016</field>
+        </record>     
+    </data>
+</openerp>

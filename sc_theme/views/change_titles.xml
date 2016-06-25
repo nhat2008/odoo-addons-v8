@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="scmetatitle_" inherit_id="web.assets_backend" name="my title" priority="20">
+			<xpath expr="." position="inside">
+				<script type="text/javascript" src="/sc_theme/static/src/js/set_title_sc.js"></script>
+			</xpath>
+		</template>		
+    </data>
+</openerp>

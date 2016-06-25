@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Templates name -->
+        <!-- New Category Template - insert template "New Category" into ir.export -->
+        <record id="newcata" model="ir.exports">
+            <field name="name">New Category</field>
+            <field name="resource">pos.category</field>
+        </record>
+        
+        <!-- Insert feilds into new template -->
+
+        <!-- New Category template -->
+        <!-- Name -->
+        <record id="newcata_field_name" model="ir.exports.line">
+            <field name="name">name</field>
+            <field name="export_id" ref="newcata"/>
+        </record>
+        
+        <!-- Parent -->
+        <record id="newcata_field_parent" model="ir.exports.line">
+            <field name="name">parent_id</field>
+            <field name="export_id" ref="newcata"/>
+        </record>
+        
+        <!-- Sequence -->
+        <record id="newcata_field_sequence" model="ir.exports.line">
+            <field name="name">sequence</field>
+            <field name="export_id" ref="newcata"/>
+        </record>
+    </data>
+</openerp>

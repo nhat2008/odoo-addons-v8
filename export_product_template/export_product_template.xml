@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Templates name -->
+        <!-- New Product Template - insert template "New Product" into ir.export -->
+        <record id="newproduct" model="ir.exports">
+            <field name="name">New Products</field>
+            <field name="resource">product.template</field>
+        </record>
+        
+        <!-- Insert feilds into new template -->
+
+        <!-- New Products template -->
+        <!-- Export ID -->
+        <record id="newproduct_field_1" model="ir.exports.line">
+            <field name="name">name</field>
+            <field name="export_id" ref="newproduct"/>
+        </record>
+        <!-- Product type -->
+        <record id="newproduct_field_2" model="ir.exports.line">
+            <field name="name">type</field>
+            <field name="export_id" ref="newproduct"/>
+        </record>
+        <!-- Can be sold -->
+        <record id="newproduct_field_3" model="ir.exports.line">
+            <field name="name">sale_ok</field>
+            <field name="export_id" ref="newproduct"/>
+        </record>
+        
+        <!-- List price -->
+        <record id="newproduct_field_4" model="ir.exports.line">
+            <field name="name">list_price</field>
+            <field name="export_id" ref="newproduct"/>
+        </record>
+        
+        <!-- Category -->
+        <record id="newproduct_field_5" model="ir.exports.line">
+            <field name="name">pos_categ_id</field>
+            <field name="export_id" ref="newproduct"/>
+        </record>
+        
+        <!-- Tax -->
+        <record id="newproduct_field_6" model="ir.exports.line">
+            <field name="name">taxes_id</field>
+            <field name="export_id" ref="newproduct"/>
+        </record>
+        
+        <!-- Supplier tax -->
+        <record id="newproduct_field_7" model="ir.exports.line">
+            <field name="name">supplier_taxes_id</field>
+            <field name="export_id" ref="newproduct"/>
+        </record>
+        
+        <!-- ean13 -->
+        <record id="newproduct_field_8" model="ir.exports.line">
+            <field name="name">ean13</field>
+            <field name="export_id" ref="newproduct"/>
+        </record>
+        
+        <!-- imange link -->
+        <record id="newproduct_field_9" model="ir.exports.line">
+            <field name="name">image_link</field>
+            <field name="export_id" ref="newproduct"/>
+        </record>
+        
+        <!-- ========================================================================= -->
+        <!-- Update Price template -->
+        <!-- Update template - insert template "Update Sale Price" into ir.export -->
+        <record id="updateprice" model="ir.exports">
+            <field name="name">Update Sale Price</field>
+            <field name="resource">product.template</field>
+        </record>
+        <!-- Sale price -->
+        <record id="updateprice_field_1" model="ir.exports.line">
+            <field name="name">name</field>
+            <field name="export_id" ref="updateprice"/>
+        </record>
+        <record id="updateprice_field_2" model="ir.exports.line">
+            <field name="name">list_price</field>
+            <field name="export_id" ref="updateprice"/>
+        </record>        
+    </data>
+</openerp>

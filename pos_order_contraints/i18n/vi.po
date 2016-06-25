@@ -1,0 +1,14 @@
+# Vietnamese translation for openobject-addons
+#. module: pos_order_contraints
+#. openerp-web
+#: code:extra-addons/pos_order_contraints/static/src/js/screens.js:184
+#, python-format
+msgid "List of products are not enough quantity to sale"
+msgstr "Danh sách sản phẩm không đủ số lượng"
+
+#. module: pos_order_contraints
+#. openerp-web
+#: code:extra-addons/pos_order_contraints/static/src/js/screens.js:153
+#, python-format
+msgid "Can not add products with quantity <= 0"
+msgstr "Không thể bán sản phẩm với số lượng <= 0"

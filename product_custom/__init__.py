@@ -1,0 +1,2 @@
+import product_custom_ean13
+import product_template

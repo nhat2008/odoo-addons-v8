@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <!-- Rule name -->
+        <!-- product.template model logging rule -->
+        <record id="product_template_logging_rule" model="auditlog.rule">
+            <field name="name">Product logging rule</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="log_read" eval="0"/>
+            <field name="log_write" eval="1"/>
+            <field name="log_unlink" eval="1"/>
+            <field name="log_create" eval="1"/>
+            <field name="state">subscribed</field>
+        </record>
+
+        <!-- user.template model logging rule -->
+        <record id="users_template_logging_rule" model="auditlog.rule">
+            <field name="name">User logging rule</field>
+            <field name="model_id" ref="base.model_res_users"/>
+            <field name="log_read" eval="0"/>
+            <field name="log_write" eval="1"/>
+            <field name="log_unlink" eval="1"/>
+            <field name="log_create" eval="1"/>
+            <field name="state">subscribed</field>
+        </record>
+    </data>
+</openerp>
