@@ -7,9 +7,9 @@
 The kernel of OpenERP, needed for all installation.
 ===================================================
 """,
-    'author': 'SONG CAU',
-    'maintainer': 'SONG CAU',
-    'website': 'http://www.songcau.com',
+    'author': 'COMPANY',
+    'maintainer': 'COMPANY',
+    'website': 'http://www.company.com',
     'depends': ['base',
                 'point_of_sale',
                 'l10n_vn'

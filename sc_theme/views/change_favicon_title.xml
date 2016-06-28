@@ -29,19 +29,19 @@
         <!-- Title -->
         <template id="scmetatitle" inherit_id="web.layout" name="my title" priority="20">
             <xpath expr="//head//title" position="replace">
-                <title>SONG CAU</title>
+                <title>COMPANY</title>
                 <script type="text/javascript" src="/sc_theme/static/src/js/set_title_sc.js"></script>
             </xpath>
         </template>
         <template id="scmetatitle_" inherit_id="web.qunit_suite" name="my title" priority="20">
             <xpath expr="//head//title" position="replace">
-                <title>SONG CAU</title>
+                <title>COMPANY</title>
                 <script type="text/javascript" src="/sc_theme/static/src/js/set_title_sc.js"></script>
             </xpath>
         </template>
         <template id="scmetatitle_session" inherit_id="point_of_sale.index" name="my title" priority="20">
             <xpath expr="//head//title" position="replace">
-                <title>SONG CAU</title>
+                <title>COMPANY</title>
                 <script type="text/javascript" src="/sc_theme/static/src/js/set_title_sc.js"></script>
             </xpath>
         </template>

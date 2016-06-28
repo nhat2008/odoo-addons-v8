@@ -4,9 +4,9 @@
     'version': '1.0',
     # 'category': 'Hidden',
     'description': "",
-    'author': 'SONG CAU',
-    'maintainer': 'SONG CAU',
-    'website': 'http://www.songcau.com',
+    'author': 'COMPANY',
+    'maintainer': 'COMPANY',
+    'website': 'http://www.company.com',
     'depends': ['base','stock','purchase'],
     'data': ['run.xml'],
  
