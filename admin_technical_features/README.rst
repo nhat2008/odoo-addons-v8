@@ -13,9 +13,7 @@ Credits
 
 Contributors
 ------------
-* Bruno Joliveau <bruno.joliveau@savoirfairelinux.com>
-* Sandy Carter <sandy.carter@savoirfairelinux.com>
-* Jordi Riera<jordi.riera@savoirfairelinux.com>
+* Nhat2008 <nminhnhat2008@gmail.com>
 
 Maintainer
 ----------
